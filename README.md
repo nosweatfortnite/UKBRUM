@@ -84,7 +84,7 @@ button.copy:hover {
     background:#e6b800;
 }
 
-/* Punishment Table */
+/* ================= Punishment Table ================= */
 table {
     width:100%;
     border-collapse:collapse;
@@ -95,6 +95,7 @@ th, td {
     border:1px solid #444;
     padding:10px;
     text-align:center;
+    color:#000; /* FIX: black text for visibility */
 }
 
 th {
@@ -152,7 +153,7 @@ th {
 <h2>👮 Staff Interaction</h2>
 
 <div class="box"><div class="copy-container">
-<textarea>Hello! I am [Name] a [Rank] Here at UKBRUM. (If i am late say "Void")</textarea>
+<textarea>Greetings! I am [Name], a [Rank] here at UKBRUM. (Late/Void)</textarea>
 <button class="copy" onclick="copyText(this)">Copy</button>
 </div></div>
 
@@ -188,13 +189,7 @@ th {
 <button class="copy" onclick="copyText(this)">Copy</button>
 </div></div>
 
-<!-- ================= ADDITIONS REQUESTED: AT BOTTOM ================= -->
 <h2>📢 Roleplay / Server Messages</h2>
-
-<div class="box"><div class="copy-container">
-<textarea>:h 🚖 Looking for a ride? There is a luxurious limousine ready to take you anywhere you want!</textarea>
-<button class="copy" onclick="copyText(this)">Copy</button>
-</div></div>
 
 <div class="box"><div class="copy-container">
 <textarea>:h 🚖 Looking for a ride? Well the taxi company is now open! Call them.</textarea>
@@ -247,11 +242,6 @@ th {
 </div></div>
 
 <div class="box"><div class="copy-container">
-<textarea>:h 🍔 Three Guys is now open. Head over there for some delicious food.</textarea>
-<button class="copy" onclick="copyText(this)">Copy</button>
-</div></div>
-
-<div class="box"><div class="copy-container">
 <textarea>:h 🌮 La Mesa is now open. Head over there for some Mexican food.</textarea>
 <button class="copy" onclick="copyText(this)">Copy</button>
 </div></div>
@@ -285,21 +275,6 @@ th {
 
 <div class="box"><div class="copy-container">
 <textarea>:h 🌍 Many Roles, One Goal — Staff Together! Communications Code: UKBRUM</textarea>
-<button class="copy" onclick="copyText(this)">Copy</button>
-</div></div>
-
-<div class="box"><div class="copy-container">
-<textarea>:h ✨ Be the Change, Be Our Staff! Join us today, Communications Code: UKBRUM</textarea>
-<button class="copy" onclick="copyText(this)">Copy</button>
-</div></div>
-
-<div class="box"><div class="copy-container">
-<textarea>:h 💪 Strong Communities, Need Strong Staff! Apply Today! Code: UKBRUM</textarea>
-<button class="copy" onclick="copyText(this)">Copy</button>
-</div></div>
-
-<div class="box"><div class="copy-container">
-<textarea>:h 🔧 Help Players, Solve Problems, Make Change! Apply Today! Code: UKBRUM</textarea>
 <button class="copy" onclick="copyText(this)">Copy</button>
 </div></div>
 
