@@ -5,11 +5,12 @@
 <title>UKBRUM Staff Panel</title>
 
 <style>
+/* ================= GLOBAL ================= */
 body {
     background:#0e0e0e;
-    color:#fff;
     font-family:Arial, sans-serif;
     padding:20px;
+    color:#fff;
 }
 
 h1 {
@@ -17,6 +18,7 @@ h1 {
     color:#ffcc00;
 }
 
+/* ================= TABS ================= */
 .tabs {
     display:flex;
     gap:10px;
@@ -46,11 +48,13 @@ h1 {
     display:block;
 }
 
+/* ================= HEADINGS ================= */
 h2 {
     color:#ffcc00;
     margin-top:30px;
 }
 
+/* ================= MESSAGE BOXES ================= */
 .box {
     margin:10px 0;
 }
@@ -84,28 +88,44 @@ button.copy:hover {
     background:#e6b800;
 }
 
-/* Punishment Table */
+/* ================= PUNISHMENT GUIDE ================= */
 table {
     width:100%;
     border-collapse:collapse;
     margin-top:20px;
+    background:#f5f5f5;
+    color:#000;
+    user-select:none;
 }
 
 th, td {
-    border:1px solid #444;
+    border:1px solid #ccc;
     padding:10px;
     text-align:center;
+    color:#000;
 }
 
 th {
-    background:#1f1f1f;
-    color:#ffcc00;
+    background:#e0e0e0;
+    font-weight:bold;
 }
 
-.warning { background:#2d3b1f; }
-.kick { background:#1f2f3b; }
-.ban { background:#2b1f1f; }
-.side { background:#2a2a2a; }
+/* Row types */
+.warning { background:#e6f0c8; }
+.kick { background:#cfe3f1; }
+.ban { background:#f1cfcf; }
+.side { background:#eeeeee; }
+
+/* Remove blue selection highlight */
+table ::selection {
+    background:#ddd;
+    color:#000;
+}
+
+table ::-moz-selection {
+    background:#ddd;
+    color:#000;
+}
 
 .note {
     margin-top:15px;
@@ -124,7 +144,7 @@ th {
     <button class="tab-btn" onclick="openTab(1)">⚖️ Punishment Guide</button>
 </div>
 
-<!-- ================= TAB 1 ================= -->
+<!-- ================= TAB 1: MESSAGES ================= -->
 <div class="tab active">
 
 <h2>⚠️ Punishment Messages</h2>
@@ -135,24 +155,24 @@ th {
 </div></div>
 
 <div class="box"><div class="copy-container">
-<textarea>You are being warned for [Reason]. If caught again it will result in a further punishment.</textarea>
+<textarea>You are being warned for [Reason]. If caught again it will result in further punishment.</textarea>
 <button class="copy" onclick="copyText(this)">Copy</button>
 </div></div>
 
 <div class="box"><div class="copy-container">
-<textarea>You are being kicked for [Reason]. Please do not join back in the next 30 minutes. You can appeal this via our communications UKBRUM.</textarea>
+<textarea>You are being kicked for [Reason]. Please do not rejoin within the next 30 minutes. You may appeal via UKBRUM communications.</textarea>
 <button class="copy" onclick="copyText(this)">Copy</button>
 </div></div>
 
 <div class="box"><div class="copy-container">
-<textarea>You are being banned for [Reason]. You can appeal this via our communications. Code: UKBRUM</textarea>
+<textarea>You are being banned for [Reason]. You may appeal via UKBRUM communications.</textarea>
 <button class="copy" onclick="copyText(this)">Copy</button>
 </div></div>
 
 <h2>👮 Staff Interaction</h2>
 
 <div class="box"><div class="copy-container">
-<textarea>Greetings! I am [Name], a [Rank] here at UKBRUM. (Late/Void)</textarea>
+<textarea>Hello, I am [Name], a [Rank] here at UKBRUM.</textarea>
 <button class="copy" onclick="copyText(this)">Copy</button>
 </div></div>
 
@@ -162,35 +182,30 @@ th {
 </div></div>
 
 <div class="box"><div class="copy-container">
-<textarea>Have an amazing roleplay! If you need any further assistance from staff don’t hesitate to call a moderator.</textarea>
+<textarea>Have a great roleplay! If you need staff assistance, don’t hesitate to call a moderator.</textarea>
 <button class="copy" onclick="copyText(this)">Copy</button>
 </div></div>
 
-<h2>📢 Roleplay / Message Commands</h2>
+<h2>📢 Roleplay / Server Messages</h2>
 
 <div class="box"><div class="copy-container">
-<textarea>:h 🚖 Looking for a ride? There is a luxurious limousine ready to take you anywhere you want!</textarea>
-<button class="copy" onclick="copyText(this)">Copy</button>
-</div></div>
-
-<div class="box"><div class="copy-container">
-<textarea>:h 🍔 Three Guys is now open. Head over for some delicious food!</textarea>
+<textarea>:h 🚖 Looking for transport? A luxury limousine is available!</textarea>
 <button class="copy" onclick="copyText(this)">Copy</button>
 </div></div>
 
 <div class="box"><div class="copy-container">
-<textarea>:m 🎮 We value your roleplay experience! Avoid unnecessary issues to keep things realistic.</textarea>
+<textarea>:h 🍔 Three Guys is now open — come grab some food!</textarea>
 <button class="copy" onclick="copyText(this)">Copy</button>
 </div></div>
 
 <div class="box"><div class="copy-container">
-<textarea>:m 🤿 Dive into immersive roleplay with us! Communications Code: UKBRUM</textarea>
+<textarea>:m 🎮 Please maintain realistic roleplay at all times.</textarea>
 <button class="copy" onclick="copyText(this)">Copy</button>
 </div></div>
 
 </div>
 
-<!-- ================= TAB 2 ================= -->
+<!-- ================= TAB 2: PUNISHMENT GUIDE ================= -->
 <div class="tab">
 
 <h2>⚖️ Punishment Guide</h2>
@@ -204,28 +219,22 @@ th {
 
 <tr><td>Unrealistic Avatar</td><td class="warning">Warning</td><td class="side">Load / Refresh</td></tr>
 <tr><td>Interrupting Scenes</td><td class="warning">Warning</td><td class="side">Load / Refresh</td></tr>
-<tr><td>RDM / VDM</td><td class="warning">Warning</td><td class="side">No Side Actions</td></tr>
+<tr><td>RDM / VDM</td><td class="warning">Warning</td><td class="side">None</td></tr>
 <tr><td>Cop Baiting / Metagaming</td><td class="warning">Warning</td><td class="side">Load / Refresh</td></tr>
 <tr><td>FRP</td><td class="warning">Warning</td><td class="side">Load / Refresh</td></tr>
 <tr><td>GTA Driving</td><td class="warning">Warning</td><td class="side">Load / Refresh</td></tr>
 <tr><td>No Permissions</td><td class="warning">Warning</td><td class="side">Refresh</td></tr>
-<tr><td>Disrespect</td><td class="kick">Kick</td><td class="side">No Side Actions</td></tr>
+<tr><td>Disrespect</td><td class="kick">Kick</td><td class="side">None</td></tr>
 <tr><td>NLR</td><td class="warning">Warning</td><td class="side">Refresh</td></tr>
-<tr><td>Not Trained</td><td class="warning">Warning</td><td class="side">Jail / Wanted</td></tr>
-<tr><td>Breaking Priority</td><td class="kick">Kick</td><td class="side">No Side Actions</td></tr>
-<tr><td>Breaking Safezones</td><td class="kick">Kick</td><td class="side">No Side Actions</td></tr>
-<tr><td>Staff Evasion / VDM / RDM</td><td class="kick">Kick</td><td class="side">No Side Actions</td></tr>
-<tr><td>Car Blockage</td><td class="warning">Warning</td><td class="side">Jail / Wanted</td></tr>
-<tr><td>Staff Impersonation</td><td class="ban">Instant Ban</td><td class="side">No Side Actions</td></tr>
-<tr><td>Breaking TOS</td><td class="ban">Instant Ban</td><td class="side">No Side Actions</td></tr>
-<tr><td>Major Events</td><td class="ban">Instant Ban</td><td class="side">No Side Actions</td></tr>
-<tr><td>L-Tap / NITRP</td><td class="ban">Instant Ban</td><td class="side">No Side Actions</td></tr>
-<tr><td>Raiding</td><td class="ban">Instant Ban</td><td class="side">No Side Actions</td></tr>
+<tr><td>Breaking Priority</td><td class="kick">Kick</td><td class="side">None</td></tr>
+<tr><td>Staff Evasion / RDM / VDM</td><td class="kick">Kick</td><td class="side">None</td></tr>
+<tr><td>Staff Impersonation</td><td class="ban">Instant Ban</td><td class="side">None</td></tr>
+<tr><td>Breaking TOS</td><td class="ban">Instant Ban</td><td class="side">None</td></tr>
 </table>
 
 <div class="note">
-Kick time / log is decided by the moderator depending on the severity of the situation.<br>
-All warnings reset each session and will not carry over.
+Kick length and logs are at moderator discretion.<br>
+Warnings reset every session and do not carry over.
 </div>
 
 </div>
@@ -234,13 +243,16 @@ All warnings reset each session and will not carry over.
 function copyText(btn) {
     const textarea = btn.previousElementSibling;
     textarea.select();
-    textarea.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(textarea.value);
 }
 
 function openTab(index) {
-    document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',i===index));
-    document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',i===index));
+    document.querySelectorAll('.tab').forEach((t,i)=>{
+        t.classList.toggle('active', i === index);
+    });
+    document.querySelectorAll('.tab-btn').forEach((b,i)=>{
+        b.classList.toggle('active', i === index);
+    });
 }
 </script>
 
